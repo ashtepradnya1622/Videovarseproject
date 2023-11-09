@@ -12,8 +12,18 @@ public class Dashboard extends Genericutil{
         }
     @FindBy(xpath = "//p[text()='Total Streams']")
     WebElement totalstream;
-        public void dataverify(){
+    @FindBy(xpath = "//p[text()='Live Streams']")
+    WebElement livestream;
+    @FindBy(xpath = "//p[text()='Total Users']")
+    WebElement totaluser;
+    @FindBy(xpath = "//p[text()='Pending Invitations']")
+    WebElement PendingInvitations;
+    public void dataverify(){
             verifyText(totalstream, "Total Streams");
-            System.out.println();
-        }
+            verifyText(livestream ,"Live Streams");
+            verifyText(totaluser,"Total Users");
+            verifyText(PendingInvitations,"Pending Invitations");
+
+
+    }
 }

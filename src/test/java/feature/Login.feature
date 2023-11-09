@@ -27,8 +27,7 @@ Feature: Admin
     And user enters the email id
     Then user clicks on reset password link buttton
 @Test8
-
-  Scenario: Verify Grid Data
+Scenario: Verify Grid Data
     Given  When User opens the url enter the valid details & click on login button
     Then Verify the data from dashboard
 
