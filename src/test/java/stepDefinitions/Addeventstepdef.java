@@ -15,4 +15,18 @@ public class Addeventstepdef {
     public void userClicksOnEvent() {
         addevent.redirectEvents();
     }
+
+    @Then("user selects the category")
+    public void userSelectsTheCategory() {
+    addevent.selectcategory();
+    }
+
+    @Then("user click on Add event button")
+    public void userClickOnAddEventButton() {
+    addevent.Addevents();
+    }
+    @Then("user clicks on event title  and enter the event title {string}")
+    public void userClicksOnEventTitleAndEnterTheEventTitle(String arg0) {
+    //addevent.enterEventTitle();
+    }
 }

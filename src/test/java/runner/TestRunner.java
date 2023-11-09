@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = {"src\\test\\java\\feature"},
         glue = {"runner","stepDefinitions"},
-        tags = " @Test4",
+        tags = " @Test8",
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests

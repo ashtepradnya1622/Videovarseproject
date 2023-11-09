@@ -4,18 +4,17 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import util.Base;
 import util.Env;
+import util.Genericutil;
 //import util.Env;
 
-public class Login extends Base {
+public class Login extends Genericutil {
     public Login() {
         super();
         PageFactory.initElements(driver(), this);
     }
     @FindBy(css = "input[placeholder='Enter email ID']")
     WebElement username;
-
     @FindBy(xpath = "//input[@placeholder='Enter password']")
     WebElement pass;
     @FindBy(xpath = "//button[normalize-space()='Log In']")
@@ -33,7 +32,8 @@ public class Login extends Base {
     WebElement flink;
     @FindBy(css = "button[type='submit']")
     WebElement resetpassword;
-
+    @FindBy(xpath = "//p[contains(@class,'false')]")
+    WebElement blankerrormsg;
     public void openUrl() {
         driver().get(Env.config.url());
     }
@@ -56,14 +56,13 @@ public class Login extends Base {
     public void blanklogin() {
        JSClick(logInBtn);
     }
-    public void forgotpassword() {
+    public void clickonforgotpassword() {
         JSClick(flink);
     }
     public void link() {
         sendValueToTextfield(username, Env.config.emailid1());
     }
-    public void resetclick()
-    {
+    public void clickonresetlink() {
         JSClick(resetpassword);
     }
 }

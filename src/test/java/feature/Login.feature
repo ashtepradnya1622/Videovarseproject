@@ -26,11 +26,14 @@ Feature: Admin
     Then user clicks on forgot password link text
     And user enters the email id
     Then user clicks on reset password link buttton
+@Test8
 
-  @Test5
-  Scenario: Add Event
-    Given User opens the url enter the valid details & click on login button
-    Then user clicks on event
+  Scenario: Verify Grid Data
+    Given  When User opens the url enter the valid details & click on login button
+    Then Verify the data from dashboard
+
+
+
 
 
 

@@ -47,7 +47,7 @@ public class LoginStepDef {
     }
     @Then("user clicks on forgot password link text")
     public void userClicksOnForgotPasswordLinkText() {
-        login.forgotpassword();
+        login.clickonforgotpassword();
     }
 
     @And("user enters the email id")
@@ -57,7 +57,7 @@ public class LoginStepDef {
 
     @Then("user clicks on reset password link buttton")
     public void userClicksOnResetPasswordLinkButtton() {
-login.resetclick();
+login.clickonresetlink();
     }
 
     @Given("user is on the login page")
