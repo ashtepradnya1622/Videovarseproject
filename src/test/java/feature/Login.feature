@@ -10,10 +10,10 @@ Feature: Admin
     When  user Enter <userId> and <password>
     Then User is not navigated to the next page
     Examples:-
-      | userId                       |  | password   |
-      | pradnya.ash@coditas.com      |  | Pradnya@12 |
-      | pradnya.ashte@coditas.com    |  | Pradnya78  |
-      | Pradnya.Ashte+PM@coditas.com |  | Pradnya@1  |
+      | userId                       |              | password   |
+      | pradnya.ash@coditas.com |                   | Abcd@1234 |
+      | tanmay.sadhankar+Admin123@coditas.com |     | Pradnya78  |
+      | Pradnya.Ashte+PM@coditas.com |              | Pradnya@1  |
 
   @Test3
   Scenario: Blank login
@@ -26,7 +26,7 @@ Feature: Admin
     Then user clicks on forgot password link text
     And user enters the email id
     Then user clicks on reset password link buttton
-@Test8
+@Test5
 Scenario: Verify Grid Data
     Given  When User opens the url enter the valid details & click on login button
     Then Verify the data from dashboard

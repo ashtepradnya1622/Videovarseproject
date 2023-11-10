@@ -3,18 +3,10 @@ package util;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-
 public class Upload {
-
-    public static void Up1(){
-        String filepath = "//";
-        Upload.file(filepath);
-    }
-
     public static void file(String filepath){
         // Create a StringSelection object with the file path
-        String thumbnailPath = filepath;
-        StringSelection stringSelection = new StringSelection(thumbnailPath);
+        StringSelection stringSelection = new StringSelection(filepath);
 
         // Set the clipboard contents to the file path
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
