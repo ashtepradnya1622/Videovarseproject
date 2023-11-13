@@ -1,9 +1,11 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import object.Addevent;
 import object.Login;
+import util.Genericutil;
 
 public class Addeventstepdef {
     Login login;
@@ -21,6 +23,7 @@ public class Addeventstepdef {
 
     @Then("user selects the category")
     public void userSelectsTheCategory() {
+        Genericutil.sleep(2000);
         addevent.selectcategory();
     }
 
@@ -33,6 +36,7 @@ public class Addeventstepdef {
     public void userClicksOnEventTitleAndEnterTheEventTitle(String ename) {
         addevent.enterEventTitle(ename);
     }
+
     @Then("user clicks on upload thumbnail and upload the file")
     public void userClicksOnUploadThumbnailAndUploadTheFile() {
         addevent.uploadthamb();
@@ -42,4 +46,30 @@ public class Addeventstepdef {
 //    public void userClicksOnDescriptionAndEnterTheDescriptionDetails() {
 //        addevent.description();
 //    }
+
+    @Then("user clicks on event Orgnizer and enter the event orgnizer name {string}")
+    public void userClicksOnEventOrgnizerAndEnterTheEventOrgnizerName(String Oname) {
+        addevent.Eventorgnizer(Oname);
+    }
+    @Then("user clicks on dropdown option")
+    public void userClicksOnDropdownOption() {
+        addevent.dropdown();
+    }
+    @Then("User selects the Event Start Date {int}")
+    public void user_selects_the_event_start_date(Integer sDate) {
+        addevent.eventStartDate(sDate);
+    }
+    @And("User selects the Event End Date {int}")
+    public void userSelectsTheEventEndDate(Integer eDate) {
+        addevent.eventEndDate(eDate);
+    }
+//    @And("User clicks the Create button")
+//    public void userClicksTheButton() {
+//        addevent.clickCreateBtn();
+//    }
 }
+
+
+
+
+

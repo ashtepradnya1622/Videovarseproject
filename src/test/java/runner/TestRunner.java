@@ -9,6 +9,10 @@ import org.testng.annotations.DataProvider;
         tags = " @Test6",
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
+/**
+ * TestRunner class that extends AbstractTestNGCucumberTests to run Cucumber scenarios.
+ *  Overrides the scenarios() method to disable parallel execution for scenarios.
+ */
 public class TestRunner extends AbstractTestNGCucumberTests
 {
     @Override
