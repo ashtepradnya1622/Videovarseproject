@@ -6,10 +6,8 @@
   <artifactId>VideoVarse</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-
   <name>VideoVarse</name>
   <url>http://maven.apache.org</url>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -55,7 +53,6 @@
       <artifactId>extentreports-cucumber7-adapter</artifactId>
       <version>1.6.0</version>
     </dependency>
-
   </dependencies>
   <build>
     <plugins>
@@ -77,6 +74,5 @@
         </configuration>
       </plugin>
     </plugins>
-
   </build>
 </project>

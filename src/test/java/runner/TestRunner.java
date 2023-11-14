@@ -14,12 +14,10 @@ import org.testng.annotations.DataProvider;
  *  Overrides the scenarios() method to disable parallel execution for scenarios.
  */
 public class TestRunner extends AbstractTestNGCucumberTests
-{
-    @Override
+{ @Override
     @DataProvider(parallel = false)
     public Object[][] scenarios()
     {
         return super.scenarios();
     }
-
 }

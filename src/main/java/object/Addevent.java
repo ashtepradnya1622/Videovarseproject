@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import util.Genericutil;
 import util.Upload;
+
+import java.util.Random;
+
 public class Addevent extends Genericutil {
     /**
      * Constructor for the Addevent
@@ -17,7 +20,7 @@ public class Addevent extends Genericutil {
         }
     @FindBy(linkText = "Events")
     WebElement clickevent;
-    @FindBy(xpath = "//a[contains(.,'tennis (2)')]")
+    @FindBy(xpath = "//a[contains(.,'tennis (4)')]")
     //@FindBy(xpath = "//a[text()='tennis (1)']")
     WebElement addcategory;
     @FindBy(xpath = "//button[@class='_buttonMain_199iz_1 _buttonTypePrimary_199iz_22  _button_y1kex_13 ']")
@@ -30,8 +33,18 @@ public class Addevent extends Genericutil {
     WebElement Dsecription;
     @FindBy(xpath = "//input[@placeholder='Enter name of organizer']")
     WebElement eventorgnize;
-    @FindBy(xpath = "//input[@role=\"combobox\"]")
+    //@FindBy(xpath = "//div[@class=' css-1jqq78o-placeholder']")
+    @FindBy(css = "[id=react-select-2-input]")
     WebElement Dropdown;
+
+    @FindBy(css = "[id=\"react-select-2-input\"]")
+    WebElement eventType;
+
+    @FindBy(xpath = "//div[@title=\"National\"]")
+    WebElement dropDwnNational;
+
+    @FindBy(xpath = "//div[@title=\"International\"]")
+    WebElement dropDwnInternational;
     @FindBy(xpath = "(//div[@class='react-datepicker__input-container ']/input)[1]")
     WebElement evntStartDate;
     @FindBy(xpath = "//button[@aria-label='Previous Month']")
@@ -87,11 +100,34 @@ public class Addevent extends Genericutil {
      */
     public void dropdown()
     {
-        Genericutil.sleep(2000);
-        JSClick(Dropdown);
+        Genericutil.sleep(3000);
+        waitAndClick(Dropdown);
         sendValueToTextfield(Dropdown,"National");
         Dropdown.sendKeys(Keys.ENTER);
     }
+
+
+    public void eventType()
+    {
+        JSClick(eventType);
+        Random random = new Random();
+        int num = random.nextInt(100);
+        if(num<50)
+        {
+            sendValueToTextfield(eventType,"International");
+            JSClick(dropDwnInternational);
+        }
+        else
+        {
+            sendValueToTextfield(eventType,"National");
+            JSClick(dropDwnNational);
+        }
+    }
+//    public void Dropdown(int option){
+//        String dropdownLocater = "\"[id=\\\"react-select-2-input\\\"] and text()='%option']";
+//        dropdownLocater = dropdownLocater.replace("%option",Integer.toString(option));
+//        JSClick(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dropdownLocater))));
+//    }
     /**
      *Clicks on the button to navigate to the previous month in a date picker or calendar.
      */
@@ -137,9 +173,9 @@ public class Addevent extends Genericutil {
         nextMonth();
         selectDate(eDate);
     }
-//    public void clickCreateBtn(){
-//        //Genericutil.sleep(2000);
-//        scrollTO(Submit);
-//        JSClick(Submit);
-//    }
+    public void clickCreateBtn(){
+        Genericutil.sleep(2000);
+        scrollTO(Submit);
+        JSClick(Submit);
+    }
 }

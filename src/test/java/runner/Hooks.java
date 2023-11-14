@@ -14,11 +14,11 @@ public class Hooks {
     {
         DriverFactory.driver();
     }
-   @After
-    /**
-     * executed after each test scenario & teardown the driver
-     */
-    public void afterMethod(Scenario scenario) {
-        DriverFactory.driverTearDown();
-    }
+//   @After
+//    /**
+//     * executed after each test scenario & teardown the driver
+//     */
+//    public void afterMethod(Scenario scenario) {
+//        DriverFactory.driverTearDown();
+//    }
 }

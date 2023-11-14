@@ -55,6 +55,12 @@ public class Addeventstepdef {
     public void userClicksOnDropdownOption() {
         addevent.dropdown();
     }
+
+    @And("User selects the Event Type from the dropdown")
+    public void userSelectsTheEventTypeFromTheDropdown()
+    {
+        addevent.eventType();
+    }
     @Then("User selects the Event Start Date {int}")
     public void user_selects_the_event_start_date(Integer sDate) {
         addevent.eventStartDate(sDate);
@@ -63,10 +69,16 @@ public class Addeventstepdef {
     public void userSelectsTheEventEndDate(Integer eDate) {
         addevent.eventEndDate(eDate);
     }
-//    @And("User clicks the Create button")
-//    public void userClicksTheButton() {
-//        addevent.clickCreateBtn();
+    @And("User clicks the Create button")
+    public void userClicksTheButton() {
+        addevent.clickCreateBtn();
+    }
+
+//    @Then("user clicks on dropdown option 1")
+//    public void userClicksOnDropdownOption(String Option) {
+//        addevent.Dropdown(Option);
 //    }
+
 }
 
 

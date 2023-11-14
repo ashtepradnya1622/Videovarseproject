@@ -90,7 +90,6 @@ public class Genericutil {
             throw e;
         }
     }
-
     /**
      *Scrolls to the specified WebElement using JavaScript
      */
@@ -105,7 +104,6 @@ public class Genericutil {
             throw e;
         }
     }
-
     /**
      *Waits for the specified WebElement to be clickable and then clicks on it
      */
