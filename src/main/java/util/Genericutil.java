@@ -121,6 +121,23 @@ public class Genericutil {
             throw e;
         }
     }
+    public void clickOnElementFromList(List<WebElement> elements, String str){
+        try{
+            for(WebElement e: elements){
+                waitForElement(e);
+                if(e.getText().toLowerCase().contains(str.toLowerCase())){
+                    System.out.println("String :"+str);
+                    jsExecutor.executeScript("arguments[0].click();", e);
+                    System.out.println("Clicked on "+ elements.toString());
+                    break;
+                }
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+    }
     /**
      * To avoid synchonization uses the synchonization method (sleep)
      */

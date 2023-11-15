@@ -7,6 +7,8 @@ import object.Addevent;
 import object.Login;
 import util.Genericutil;
 
+import javax.swing.text.html.Option;
+
 public class Addeventstepdef {
     Login login;
     Addevent addevent;
@@ -51,11 +53,6 @@ public class Addeventstepdef {
     public void userClicksOnEventOrgnizerAndEnterTheEventOrgnizerName(String Oname) {
         addevent.Eventorgnizer(Oname);
     }
-    @Then("user clicks on dropdown option")
-    public void userClicksOnDropdownOption() {
-        addevent.dropdown();
-    }
-
     @And("User selects the Event Type from the dropdown")
     public void userSelectsTheEventTypeFromTheDropdown()
     {
@@ -74,11 +71,15 @@ public class Addeventstepdef {
         addevent.clickCreateBtn();
     }
 
-//    @Then("user clicks on dropdown option 1")
-//    public void userClicksOnDropdownOption(String Option) {
-//        addevent.Dropdown(Option);
-//    }
+    @Then("user clicks on dropdown option")
+    public void userClicksOnDropdownOption() {
+        addevent.eventType();
 
+    }
+//    @Then("user clicks on dropdown option {int}")
+//    public void user_clicks_on_dropdown_option(Integer option) {
+//        addevent.dropdown1(option);
+//    }
 }
 
 

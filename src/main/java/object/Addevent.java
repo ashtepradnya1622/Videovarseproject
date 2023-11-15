@@ -1,6 +1,7 @@
 package object;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,9 +9,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import util.Genericutil;
 import util.Upload;
 
+import java.util.List;
 import java.util.Random;
 
 public class Addevent extends Genericutil {
+    WebDriver driver;
     /**
      * Constructor for the Addevent
      */
@@ -20,7 +23,7 @@ public class Addevent extends Genericutil {
         }
     @FindBy(linkText = "Events")
     WebElement clickevent;
-    @FindBy(xpath = "//a[contains(.,'tennis (4)')]")
+    @FindBy(xpath = "//a[contains(.,'tennis (5)')]")
     //@FindBy(xpath = "//a[text()='tennis (1)']")
     WebElement addcategory;
     @FindBy(xpath = "//button[@class='_buttonMain_199iz_1 _buttonTypePrimary_199iz_22  _button_y1kex_13 ']")
@@ -37,7 +40,7 @@ public class Addevent extends Genericutil {
     @FindBy(css = "[id=react-select-2-input]")
     WebElement Dropdown;
 
-    @FindBy(css = "[id=\"react-select-2-input\"]")
+    @FindBy(css = "[id=react-select-2-input]")
     WebElement eventType;
 
     @FindBy(xpath = "//div[@title=\"National\"]")
@@ -55,6 +58,8 @@ public class Addevent extends Genericutil {
     WebElement evntEndDate;
     @FindBy(xpath = "//button[normalize-space()='Create']")
     WebElement Submit;
+    @FindBy(xpath = "//div[@class='_mainElement_1af1c_49']//a")
+    List<WebElement> listOfCategories;
 
 
 // @FindBy(xpath = "//div[@class=' css-16ji5os']")
@@ -105,8 +110,14 @@ public class Addevent extends Genericutil {
         sendValueToTextfield(Dropdown,"National");
         Dropdown.sendKeys(Keys.ENTER);
     }
-
-
+//    public void dropdown1(Integer option)
+//    {
+//        JSClick(Dropdown);
+//        Dropdown(option);
+//    }
+    /**
+     *Create a new Random object&Generate a random integer between 0 (inclusive) and 100 (exclusive) and store it in the variable 'num'.
+     */
     public void eventType()
     {
         JSClick(eventType);
@@ -123,8 +134,8 @@ public class Addevent extends Genericutil {
             JSClick(dropDwnNational);
         }
     }
-//    public void Dropdown(int option){
-//        String dropdownLocater = "\"[id=\\\"react-select-2-input\\\"] and text()='%option']";
+    //    public void Dropdown(int option){
+//        String dropdownLocater = "[id=react-select-2-input] and text()='%option']";
 //        dropdownLocater = dropdownLocater.replace("%option",Integer.toString(option));
 //        JSClick(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dropdownLocater))));
 //    }
@@ -178,4 +189,5 @@ public class Addevent extends Genericutil {
         scrollTO(Submit);
         JSClick(Submit);
     }
+
 }
