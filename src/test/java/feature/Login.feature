@@ -15,7 +15,7 @@ Feature: Admin
   @Test3
   Scenario: Blank login
     Given user opens the url
-    Then users clicks on login button
+   Then users clicks on login button
   @Test4
   Scenario: Forgot password
     Given user is on the login page

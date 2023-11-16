@@ -5,9 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import util.Genericutil;
-
 public class Deleteevent extends Genericutil {
     WebDriver driver;
+    /**
+     * Constructor for the deleteevent
+     */
     public Deleteevent() {
         super();
         PageFactory.initElements(driver(), this);
@@ -18,12 +20,21 @@ public class Deleteevent extends Genericutil {
     WebElement Deleteeventbutton;
     @FindBy(xpath = "//button[@class='_buttonMain_199iz_1 _buttonTypeSecondary_199iz_27  undefined ']")
     WebElement Cancel;
-    public void deletedot(){
-      waitAndClick(Deleteeventdot);
+    /**
+     * clicks on kababamenu/three dots
+     */
+    public void deleteDot(){
+        waitAndClick(Deleteeventdot);
     }
+    /**
+     * clicks on deletebutton
+     */
     public void deleteButton() {
         waitAndClick(Deleteeventbutton);
     }
+    /**
+     * clicks on cancelebutton
+     */
     public void deleteCancel() {
      waitAndClick(Cancel);
     }

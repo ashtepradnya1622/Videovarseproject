@@ -12,12 +12,13 @@ import java.util.List;
 
 public class Editevent extends Genericutil {
     WebDriver driver;
+
     public Editevent() {
-            super();
-            PageFactory.initElements(driver(), this);
-        }
-        @FindBy(css = "._formContainer_mt5l6_8")
-        WebElement formEditEvent;
+        super();
+        PageFactory.initElements(driver(), this);
+    }
+    @FindBy(css = "._formContainer_mt5l6_8")
+    WebElement formEditEvent;
     @FindBy(xpath = "(//div[contains(@class,'InovuaReactDataGrid__cell__content')])[5]")
     WebElement editBtn;
     @FindBy(xpath = "(//div[contains(@class,'_kebabMenuItems_o5s6f_23 _menuEnabled_o5s6f_29')])[2]")
@@ -36,30 +37,54 @@ public class Editevent extends Genericutil {
     List<WebElement> listOfCategories;
     @FindBy(xpath = "button[type='submit']")
     WebElement submit;
+
+    /**
+     * clicks on editeventbutton
+     */
     public void clickEditEventBtn() {
         Genericutil.sleep(2000);
         waitAndClick(editBtn);
     }
+
+    /**
+     * Perform a search operation by clicking on the search element.
+     */
     public void searchBox(String ename) {
         Clickonjs(search);
-        sendValueToTextfield(search ,ename);
+        sendValueToTextfield(search, ename);
         search.sendKeys(Keys.ENTER);
     }
+
+    /**
+     * clicks on editeventtext
+     */
     public void editEventText() {
         Genericutil.sleep(2000);
         waitAndClick(editEventText);
     }
+
+    /**
+     * Clear the existing value in the eventtitle field and enter new value.
+     */
     public void editEventTitle(String eTitle) {
         editEventTitle.clear();
         sendValueToTextfield(editEventTitle, eTitle);
     }
+
+    /**
+     * Clear the existing value in the event organizer field and enter new value
+     */
     public void editOrganizer(String orgName) {
         editEventOrganizer.clear();
-        sendValueToTextfield(editEventOrganizer,orgName);
-    }public void clickSaveBtn(){
+        sendValueToTextfield(editEventOrganizer, orgName);
+    }
+    /**
+     * click using javascript
+     */
+    public void clickSaveBtn() {
         Genericutil.sleep(2000);
         scrollTO(saveBtn);
         JSClick(saveBtn);
     }
-    }
+}
 

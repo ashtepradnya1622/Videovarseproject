@@ -1,9 +1,16 @@
 package util;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
+
 /**
  *  DriverFactory class is responsible for managing WebDriver instances in a multi-threaded environment.
  */
@@ -26,6 +33,7 @@ public class DriverFactory {
         }
         return driverThreadLocal.get();
     }
+
     public static void driverTearDown() {
     }
 }

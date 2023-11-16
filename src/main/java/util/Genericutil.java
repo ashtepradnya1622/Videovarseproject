@@ -1,16 +1,17 @@
 package util;
 
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -55,6 +56,7 @@ public class Genericutil {
             throw e;
         }
     }
+
     /**
      *Use WebDriverWait to wait for the visibility of the element
      */

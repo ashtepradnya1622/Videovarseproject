@@ -62,10 +62,6 @@ public class Addevent extends Genericutil {
     WebElement Submit;
     @FindBy(xpath = "//div[@class='_mainElement_1af1c_49']//a")
     List<WebElement> listOfCategories;
-
-
-    // @FindBy(xpath = "//div[@class=' css-16ji5os']")
-// WebElement selectdropdown;
     public void redirectEvents()
     {
         JSClick(clickevent);
@@ -84,13 +80,12 @@ public class Addevent extends Genericutil {
     }
     public void Addevents() {
         JSClick(addeventbutton);
-
     }
     public void enterEventTitle(String eName)
     {
         sendValueToTextfield(nameoftitle,eName);
     }
-    public void uploadthamb()
+    public void uploadThamb()
     {
         uploadThumbnail.click();
         Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
@@ -99,20 +94,10 @@ public class Addevent extends Genericutil {
      * and then enters the provided organizer name.
      * @param Oname The name of the event organizer to be entered.
      */
-    public void Eventorgnizer(String Oname)
+    public void eventOrgnizer(String Oname)
     {
         JSClick(eventorgnize);
         sendValueToTextfield(eventorgnize,Oname);
-    }
-    /**Clicks on the dropdown using JavaScript
-     *pressing the "Enter" key to select the value
-     */
-    public void dropdown()
-    {
-        Genericutil.sleep(3000);
-        waitAndClick(Dropdown);
-        sendValueToTextfield(Dropdown,"National");
-        Dropdown.sendKeys(Keys.ENTER);
     }
     /**
      *Create a new Random object&Generate a random integer between 0 (inclusive) and 100 (exclusive) and store it in the variable 'num'.

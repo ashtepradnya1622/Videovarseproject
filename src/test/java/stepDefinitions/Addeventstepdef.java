@@ -6,9 +6,6 @@ import io.cucumber.java.en.When;
 import object.Addevent;
 import object.Login;
 import util.Genericutil;
-
-import javax.swing.text.html.Option;
-
 public class Addeventstepdef {
     Login login;
     Addevent addevent;
@@ -37,14 +34,13 @@ public class Addeventstepdef {
     public void userClicksOnEventTitleAndEnterTheEventTitle(String ename) {
         addevent.enterEventTitle(ename);
     }
-
     @Then("user clicks on upload thumbnail and upload the file")
     public void userClicksOnUploadThumbnailAndUploadTheFile() {
-        addevent.uploadthamb();
+        addevent.uploadThamb();
     }
     @Then("user clicks on event Orgnizer and enter the event orgnizer name {string}")
     public void userClicksOnEventOrgnizerAndEnterTheEventOrgnizerName(String Oname) {
-        addevent.Eventorgnizer(Oname);
+        addevent.eventOrgnizer(Oname);
     }
     @And("User selects the Event Type from the dropdown")
     public void userSelectsTheEventTypeFromTheDropdown()

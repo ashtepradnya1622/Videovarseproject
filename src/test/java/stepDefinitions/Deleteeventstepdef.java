@@ -14,11 +14,11 @@ public class Deleteeventstepdef {
     }
     @And("User clicks on the three dots under Actions column of Tenis evenet")
     public void userClicksOnTheThreeDotsUnderActionsColumnOfTenisEvenet() {
-        deleteevent.deletedot();
+        deleteevent.deleteDot();
     }
     @And("user clicks on Delete event button")
     public void userClicksOnDeleteEventButton() {
-    deleteevent.deleteButton();
+        deleteevent.deleteButton();
     }
     @Then("user clicks on Cancel button")
     public void userClicksOnCancelButton() {
