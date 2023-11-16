@@ -9,14 +9,13 @@ import object.Login;
 public class Editeventstepdef {
     Login login;
     Editevent editevent;
-    public Editeventstepdef(Login login, Editevent editevent ) {
-        this.editevent  = editevent;
+    public Editeventstepdef(Login login, Editevent editevent) {
+        this.editevent = editevent;
         this.login = login;
     }
-
     @And("User clicks on the three dots under Actions column")
     public void userClicksOnTheThreeDotsUnderActionsColumn() {
-         editevent.clickEditEventBtn();
+        editevent.clickEditEventBtn();
     }
 
     @And("User clicks on Edit Event button")
@@ -35,5 +34,9 @@ public class Editeventstepdef {
     @Then("user clicks on save button")
     public void userclicksonsavebutton() {
         editevent.clickSaveBtn();
+    }
+    @Then("user clicks on serach box and enter the event name{string}")
+    public void userClicksOnSerachBoxAndEnterTheEventName(String ename) {
+        editevent.searchBox(ename);
     }
 }

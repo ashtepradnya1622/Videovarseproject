@@ -33,7 +33,6 @@ public class Addeventstepdef {
     public void userClickOnAddEventButton() {
         addevent.Addevents();
     }
-
     @Then("user clicks on event title  and enter the event title {string}")
     public void userClicksOnEventTitleAndEnterTheEventTitle(String ename) {
         addevent.enterEventTitle(ename);
@@ -43,12 +42,6 @@ public class Addeventstepdef {
     public void userClicksOnUploadThumbnailAndUploadTheFile() {
         addevent.uploadthamb();
     }
-
-//    @Then("user clicks on description and enter the description details")
-//    public void userClicksOnDescriptionAndEnterTheDescriptionDetails() {
-//        addevent.description();
-//    }
-
     @Then("user clicks on event Orgnizer and enter the event orgnizer name {string}")
     public void userClicksOnEventOrgnizerAndEnterTheEventOrgnizerName(String Oname) {
         addevent.Eventorgnizer(Oname);
@@ -70,19 +63,12 @@ public class Addeventstepdef {
     public void userClicksTheButton() {
         addevent.clickCreateBtn();
     }
-
     @Then("user clicks on dropdown option")
     public void userClicksOnDropdownOption() {
         addevent.eventType();
-
     }
-//    @Then("user clicks on dropdown option {int}")
-//    public void user_clicks_on_dropdown_option(Integer option) {
-//        addevent.dropdown1(option);
-//    }
+    @When("User clicks on sport")
+    public void userClicksOnSport() {
+        addevent.selectCategory1();
+    }
 }
-
-
-
-
-

@@ -6,9 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import util.Env;
 import util.Genericutil;
 import util.Upload;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -18,9 +20,9 @@ public class Addevent extends Genericutil {
      * Constructor for the Addevent
      */
     public Addevent() {
-            super();
-            PageFactory.initElements(driver(), this);
-        }
+        super();
+        PageFactory.initElements(driver(), this);
+    }
     @FindBy(linkText = "Events")
     WebElement clickevent;
     @FindBy(xpath = "//a[contains(.,'tennis (5)')]")
@@ -62,18 +64,25 @@ public class Addevent extends Genericutil {
     List<WebElement> listOfCategories;
 
 
-// @FindBy(xpath = "//div[@class=' css-16ji5os']")
+    // @FindBy(xpath = "//div[@class=' css-16ji5os']")
 // WebElement selectdropdown;
     public void redirectEvents()
     {
         JSClick(clickevent);
     }
     public void selectcategory() {
-
-       addcategory.click();
+        addcategory.click();
     }
-    public void Addevents()
-    {
+    public void selectCategory1(){
+        for (int i = 0; i < listOfCategories.size(); i++) {
+            String[] name = listOfCategories.get(i).getText().split(" ");
+            String formattedName = name[0].trim();
+            if (Env.config.subCategories().equalsIgnoreCase(formattedName)) {
+                waitAndClick(listOfCategories.get(i));
+            }
+        }
+    }
+    public void Addevents() {
         JSClick(addeventbutton);
 
     }
@@ -83,14 +92,9 @@ public class Addevent extends Genericutil {
     }
     public void uploadthamb()
     {
-    uploadThumbnail.click();
-    Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
+        uploadThumbnail.click();
+        Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
     }
-//    public void description()
-//    {
-//        JSClick(Dsecription);
-//        sendValueToTextfield(Dsecription,"Tennis is international game ");
-//    }
     /**Initiates the event organizer field by clicking using JavaScript
      * and then enters the provided organizer name.
      * @param Oname The name of the event organizer to be entered.
@@ -110,11 +114,6 @@ public class Addevent extends Genericutil {
         sendValueToTextfield(Dropdown,"National");
         Dropdown.sendKeys(Keys.ENTER);
     }
-//    public void dropdown1(Integer option)
-//    {
-//        JSClick(Dropdown);
-//        Dropdown(option);
-//    }
     /**
      *Create a new Random object&Generate a random integer between 0 (inclusive) and 100 (exclusive) and store it in the variable 'num'.
      */

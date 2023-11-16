@@ -1,9 +1,7 @@
 Feature: Admin
-
   @Test1
   Scenario: login Scenario
     When User opens the url enter the valid details & click on login button
-
   @Test2
   Scenario Outline:Invalid login Scenario
     Given  user opens the url
@@ -14,12 +12,10 @@ Feature: Admin
       | pradnya.ash@coditas.com |                   | Abcd@1234 |
       | tanmay.sadhankar+Admin123@coditas.com |     | Pradnya78  |
       | Pradnya.Ashte+PM@coditas.com |              | Pradnya@1  |
-
   @Test3
   Scenario: Blank login
     Given user opens the url
     Then users clicks on login button
-
   @Test4
   Scenario: Forgot password
     Given user is on the login page

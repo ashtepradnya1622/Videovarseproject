@@ -15,5 +15,7 @@ public interface Env extends Config
     String passowrd();
     @Key("emailid1")
     String emailid1();
+    @Key("subCategories")
+    String subCategories();
 
 }
