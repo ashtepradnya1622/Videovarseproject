@@ -3,29 +3,25 @@ package stepDefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import object.Addevent;
-import object.Login;
+import pages.Addevent;
+import pages.Login;
 import util.Genericutil;
 public class Addeventstepdef {
     Login login;
     Addevent addevent;
-
     public Addeventstepdef(Login login, Addevent addevent) {
         this.addevent = addevent;
         this.login = login;
     }
-
     @Then("user clicks on event")
     public void userClicksOnEvent() {
         addevent.redirectEvents();
     }
-
     @Then("user selects the category")
     public void userSelectsTheCategory() {
         Genericutil.sleep(2000);
-        addevent.selectcategory();
+        addevent.selectCategory1();
     }
-
     @Then("user click on Add event button")
     public void userClickOnAddEventButton() {
         addevent.Addevents();
@@ -42,11 +38,6 @@ public class Addeventstepdef {
     public void userClicksOnEventOrgnizerAndEnterTheEventOrgnizerName(String Oname) {
         addevent.eventOrgnizer(Oname);
     }
-    @And("User selects the Event Type from the dropdown")
-    public void userSelectsTheEventTypeFromTheDropdown()
-    {
-        addevent.eventType();
-    }
     @Then("User selects the Event Start Date {int}")
     public void user_selects_the_event_start_date(Integer sDate) {
         addevent.eventStartDate(sDate);
@@ -59,12 +50,12 @@ public class Addeventstepdef {
     public void userClicksTheButton() {
         addevent.clickCreateBtn();
     }
-    @Then("user clicks on dropdown option")
-    public void userClicksOnDropdownOption() {
-        addevent.eventType();
-    }
     @When("User clicks on sport")
     public void userClicksOnSport() {
         addevent.selectCategory1();
+    }
+    @Then("user clicks on dropdown option {string}")
+    public void userClicksOnDropdownOption(String stype) {
+        addevent.Dropdown(stype);
     }
 }

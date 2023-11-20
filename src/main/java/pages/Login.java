@@ -1,9 +1,8 @@
-package object;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import util.Env;
 import util.Genericutil;
 //import util.Env;

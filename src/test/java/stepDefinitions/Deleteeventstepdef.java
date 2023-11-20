@@ -2,8 +2,8 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import object.Deleteevent;
-import object.Login;
+import pages.Deleteevent;
+import pages.Login;
 
 public class Deleteeventstepdef {
     Login login;

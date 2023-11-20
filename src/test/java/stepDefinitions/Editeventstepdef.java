@@ -2,9 +2,8 @@ package stepDefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import object.Editevent;
-import object.Login;
+import pages.Editevent;
+import pages.Login;
 
 public class Editeventstepdef {
     Login login;

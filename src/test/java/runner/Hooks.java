@@ -14,18 +14,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
-
 public class Hooks {
     /**
      * Executed before each test scenario.
      */
     public WebDriver driver;
-
     @Before
     public void beforeMethod(Scenario scenario) {
         DriverFactory.driver();
     }
-
     /**
      * captures a screenshot and saves it to the specified directory
      */
@@ -34,7 +31,6 @@ public class Hooks {
      * executed after each test scenario & teardown the driver
      */
     public void TearDown(Scenario scenario) {
-        //DriverFactory.driverTearDown(){
         if (scenario.isFailed()) {
             try {
                 final byte[] screenshot = ((TakesScreenshot) Objects.requireNonNull(DriverFactory.driver())).getScreenshotAs(OutputType.BYTES);

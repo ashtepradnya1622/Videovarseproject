@@ -1,9 +1,9 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Then;
-import object.Addevent;
-import object.Login;
-import object.Stream;
+import pages.Login;
+import pages.Stream;
+import util.Upload;
 public class Streamstepdef {
     Login login;
     Stream stream;
@@ -24,6 +24,14 @@ public class Streamstepdef {
     }
     @Then("user clicks on Streamtitle and enter the stream name {string}")
     public void userClicksOnStreamtitleAndEnterTheStreamName(String streamname) {
-    stream.addStreamTitle(streamname);
+        stream.addStreamTitle(streamname);
+    }
+    @Then("user clicks on uploadthumbnail butoon")
+    public void userClicksOnUploadthumbnailButoon() {
+    stream.uploadThamb1();
+    }
+    @Then("user clicks on streamtype dropdown option {string}")
+    public void userClicksOnStreamtypeDropdownOption(String stype) {
+        stream.streamType(stype);
     }
 }

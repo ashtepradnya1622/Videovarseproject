@@ -2,8 +2,8 @@ package stepDefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import object.Dashboard;
-import object.Login;
+import pages.Dashboard;
+import pages.Login;
 
 public class Dashboardverificationstep {
     Dashboard dashboard;

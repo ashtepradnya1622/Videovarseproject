@@ -1,4 +1,4 @@
-package object;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,6 +36,6 @@ public class Deleteevent extends Genericutil {
      * clicks on cancelebutton
      */
     public void deleteCancel() {
-     waitAndClick(Cancel);
+        waitAndClick(Cancel);
     }
 }

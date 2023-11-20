@@ -1,6 +1,5 @@
-package object;
+package pages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +9,6 @@ import util.Env;
 import util.Genericutil;
 import util.Upload;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
@@ -41,13 +39,10 @@ public class Addevent extends Genericutil {
     //@FindBy(xpath = "//div[@class=' css-1jqq78o-placeholder']")
     @FindBy(css = "[id=react-select-2-input]")
     WebElement Dropdown;
-
     @FindBy(css = "[id=react-select-2-input]")
     WebElement eventType;
-
     @FindBy(xpath = "//div[@title=\"National\"]")
     WebElement dropDwnNational;
-
     @FindBy(xpath = "//div[@title=\"International\"]")
     WebElement dropDwnInternational;
     @FindBy(xpath = "(//div[@class='react-datepicker__input-container ']/input)[1]")
@@ -81,12 +76,10 @@ public class Addevent extends Genericutil {
     public void Addevents() {
         JSClick(addeventbutton);
     }
-    public void enterEventTitle(String eName)
-    {
+    public void enterEventTitle(String eName) {
         sendValueToTextfield(nameoftitle,eName);
     }
-    public void uploadThamb()
-    {
+    public void uploadThamb() {
         uploadThumbnail.click();
         Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
     }
@@ -94,55 +87,62 @@ public class Addevent extends Genericutil {
      * and then enters the provided organizer name.
      * @param Oname The name of the event organizer to be entered.
      */
-    public void eventOrgnizer(String Oname)
-    {
+    public void eventOrgnizer(String Oname) {
         JSClick(eventorgnize);
         sendValueToTextfield(eventorgnize,Oname);
     }
     /**
      *Create a new Random object&Generate a random integer between 0 (inclusive) and 100 (exclusive) and store it in the variable 'num'.
      */
-    public void eventType()
-    {
-        JSClick(eventType);
-        Random random = new Random();
-        int num = random.nextInt(100);
-        if(num<50)
-        {
-            sendValueToTextfield(eventType,"International");
-            JSClick(dropDwnInternational);
-        }
-        else
-        {
-            sendValueToTextfield(eventType,"National");
-            JSClick(dropDwnNational);
-        }
-    }
-    //    public void Dropdown(int option){
-//        String dropdownLocater = "[id=react-select-2-input] and text()='%option']";
-//        dropdownLocater = dropdownLocater.replace("%option",Integer.toString(option));
-//        JSClick(wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(dropdownLocater))));
+//    public void eventType() {
+//        JSClick(eventType);
+//        Random random = new Random();
+//        int num = random.nextInt(100);
+//        if(num<50)
+//        {
+//            sendValueToTextfield(eventType,"International");
+//            JSClick(dropDwnInternational);
+//        }
+//        else
+//        {
+//            sendValueToTextfield(eventType,"National");
+//            JSClick(dropDwnNational);
+//        }
 //    }
+      public void Dropdown(String stype) {
+        waitAndClick(eventType);
+        eventtypedropdown(stype);
+    }
+       public void eventtypedropdown(String option){
+        WebElement optionElement1 = null;
+        switch (option){
+            case "National":
+                optionElement1 =dropDwnNational ;
+                break;
+            case "International":
+            default:
+                optionElement1 = dropDwnInternational ;
+        }
+        JSClick(wait.until(ExpectedConditions.visibilityOf(optionElement1)));
+    }
     /**
      *Clicks on the button to navigate to the previous month in a date picker or calendar.
      */
-    public void previousMonth()
-    {
+    public void previousMonth() {
         JSClick(previousMonthBtn);
     }
     /**
      * Clicks on the button to navigate to the next month in a date picker or calendar.
      */
-    public void nextMonth()
-    {JSClick(nextMonthBtn);
+    public void nextMonth() {
+        JSClick(nextMonthBtn);
     }
     /**
      * Sets the event start date by clicking on the event start date element
      * and selecting the specified date using JavaScript.
      * @param sDate The day of the month for the event start date.
      */
-    public void eventStartDate(Integer sDate)
-    {
+    public void eventStartDate(Integer sDate) {
         JSClick(evntStartDate);
         previousMonth();
         selectDate(sDate);
@@ -173,5 +173,4 @@ public class Addevent extends Genericutil {
         scrollTO(Submit);
         JSClick(Submit);
     }
-
 }

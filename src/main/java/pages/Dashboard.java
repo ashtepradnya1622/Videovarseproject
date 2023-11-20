@@ -1,4 +1,4 @@
-package object;
+package pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +21,7 @@ public class Dashboard extends Genericutil{
     public void dataverify(){
             verifyText(totalstream, "Total Streams");
             verifyText(livestream ,"Live Streams");
-            verifyText(totaluser,"Total Users");
+            verifyText(totaluser,"Total users");
             verifyText(PendingInvitations,"Pending Invitations");
 
 
