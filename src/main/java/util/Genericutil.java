@@ -124,6 +124,20 @@ public class Genericutil {
             throw e;
         }
     }
+
+    public void click(WebElement element)
+    {
+        try{
+            element.click();
+            System.out.println("Successfully clicked on "+element);
+        }
+        catch (Exception e)
+        {
+            System.out.println("Unable to clicked on element <"+element.toString()+">");
+            System.out.println("Throws Exception :" +e);
+            throw e;
+        }
+    }
     public void clickOnElementFromList(List<WebElement> elements, String str){
         try{
             for(WebElement e: elements){

@@ -17,11 +17,11 @@ public class Addeventstepdef {
     public void userClicksOnEvent() {
         addevent.redirectEvents();
     }
-    @Then("user selects the category")
-    public void userSelectsTheCategory() {
-        Genericutil.sleep(2000);
-        addevent.selectCategory1();
-    }
+//    @Then("user selects the category")
+//    public void userSelectsTheCategory() {
+//        Genericutil.sleep(2000);
+//        addevent.selectCategory1(cname);
+//    }
     @Then("user click on Add event button")
     public void userClickOnAddEventButton() {
         addevent.Addevents();
@@ -50,12 +50,16 @@ public class Addeventstepdef {
     public void userClicksTheButton() {
         addevent.clickCreateBtn();
     }
-    @When("User clicks on sport")
-    public void userClicksOnSport() {
-        addevent.selectCategory1();
-    }
+//    @When("User clicks on sport")
+//    public void userClicksOnSport() {
+//        addevent.selectCategory1();
+//    }
     @Then("user clicks on dropdown option {string}")
     public void userClicksOnDropdownOption(String stype) {
         addevent.Dropdown(stype);
+    }
+    @When("User clicks on sportcategory{string}")
+    public void userClicksOnSportcategory(String cname) {
+        addevent.selectCategory1(cname);
     }
 }

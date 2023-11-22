@@ -53,13 +53,18 @@ public class Stream extends Genericutil {
     public void uploadThamb1() {
         Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
     }
-
     @FindBy(xpath = "//div[@title='Live']")
     private WebElement liveOption;
-
     @FindBy(xpath = "//div[@title='Archived']")
     private WebElement archivedOption;
-
+    @FindBy(xpath = "//input[@value='others']")
+    WebElement othersLinkType;
+    @FindBy(xpath = "//div[@class='_tabContent_aprkj_6']//input[contains(@class,'_inputContainerMain_1q9hj_73')]")
+    WebElement downloadableLink;
+    @FindBy(css = "button[type='submit']")
+    WebElement buttonsubmit;
+    @FindBy(xpath = "button[type='submit']")
+    private WebElement confirmbutton;
     public void streamdropdown1(String option){
         WebElement optionElement = null;
         switch (option){
@@ -71,5 +76,20 @@ public class Stream extends Genericutil {
                 optionElement = archivedOption;
         }
         JSClick(wait.until(ExpectedConditions.visibilityOf(optionElement)));
+    }
+    public void LinkType(String ltype)
+    {
+        othersLinkType.click();
+    }
+    public void downladLink(){
+        waitAndClick(downloadableLink);
+        sendValueToTextfield(downloadableLink,"https://admin-videoverse-stream.s3.eu-west-2.amazonaws.com/stream-videos/liverpool-vs-city.mp4");
+    }
+    public void buttonSubmit()
+    {
+        Genericutil.sleep(2000);
+        scrollTO(buttonsubmit);
+        waitAndClick(buttonsubmit);
+        waitAndClick(confirmbutton);
     }
 }

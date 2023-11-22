@@ -3,12 +3,12 @@ Feature: Event
   Scenario: Categories
     Given User opens the url enter the valid details & click on login button
     Then user clicks on event
-    When User clicks on sport
+    When User clicks on sportcategory"handball"
   @Test7
   Scenario: Add Event
     Given User opens the url enter the valid details & click on login button
     Then user clicks on event
-    Then user selects the category
+    Then User clicks on sportcategory"Tennis"
     Then user click on Add event button
     Then user clicks on upload thumbnail and upload the file
     Then user clicks on event title  and enter the event title "Worldtenisone"
@@ -21,7 +21,7 @@ Feature: Event
   Scenario: Edit Event
     Given User opens the url enter the valid details & click on login button
     Then user clicks on event
-    When user selects the category
+    When User clicks on sportcategory"Tennis"
     Then user clicks on serach box and enter the event name"Saniatenis"
     And User clicks on the three dots under Actions column
     And User clicks on Edit Event button
@@ -32,7 +32,7 @@ Feature: Event
   Scenario: Delete Event
     Given User opens the url enter the valid details & click on login button
     Then user clicks on event
-    When user selects the category
+    When User clicks on sportcategory"Tennis"
     Then user clicks on serach box and enter the event name"Deleteevent"
     And User clicks on the three dots under Actions column
     And user clicks on Delete event button

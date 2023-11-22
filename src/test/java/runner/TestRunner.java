@@ -6,7 +6,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = {"src\\test\\java\\feature"},
         glue = {"runner","stepDefinitions"},
-        tags = " @Test7",
+        tags = " @Test13",
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
 )
 /**

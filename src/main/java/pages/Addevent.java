@@ -57,18 +57,14 @@ public class Addevent extends Genericutil {
     WebElement Submit;
     @FindBy(xpath = "//div[@class='_mainElement_1af1c_49']//a")
     List<WebElement> listOfCategories;
-    public void redirectEvents()
-    {
+    public void redirectEvents() {
         JSClick(clickevent);
     }
-    public void selectcategory() {
-        addcategory.click();
-    }
-    public void selectCategory1(){
+    public void selectCategory1(String cname) {
         for (int i = 0; i < listOfCategories.size(); i++) {
             String[] name = listOfCategories.get(i).getText().split(" ");
             String formattedName = name[0].trim();
-            if (Env.config.subCategories().equalsIgnoreCase(formattedName)) {
+            if (cname.equalsIgnoreCase(formattedName)) {
                 waitAndClick(listOfCategories.get(i));
             }
         }
@@ -94,26 +90,11 @@ public class Addevent extends Genericutil {
     /**
      *Create a new Random object&Generate a random integer between 0 (inclusive) and 100 (exclusive) and store it in the variable 'num'.
      */
-//    public void eventType() {
-//        JSClick(eventType);
-//        Random random = new Random();
-//        int num = random.nextInt(100);
-//        if(num<50)
-//        {
-//            sendValueToTextfield(eventType,"International");
-//            JSClick(dropDwnInternational);
-//        }
-//        else
-//        {
-//            sendValueToTextfield(eventType,"National");
-//            JSClick(dropDwnNational);
-//        }
-//    }
       public void Dropdown(String stype) {
         waitAndClick(eventType);
         eventtypedropdown(stype);
     }
-       public void eventtypedropdown(String option){
+    public void eventtypedropdown(String option){
         WebElement optionElement1 = null;
         switch (option){
             case "National":

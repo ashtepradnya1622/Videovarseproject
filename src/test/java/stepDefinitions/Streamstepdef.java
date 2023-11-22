@@ -10,10 +10,11 @@ public class Streamstepdef {
     public Streamstepdef(Login login, Stream stream ) {
         this.stream  = stream;
         this.login = login;
-    }@Then("user clicks on any event")
-    public void userClicksOnAnyEvent() {
-    stream.streamClick();
-    }
+  }
+//    @Then("user clicks on any event")
+//    public void userClicksOnAnyEvent() {
+//    stream.streamClick();
+//    }
     @Then("user clicks on add stream button")
     public void userClicksOnAddStreamButton() {
    stream.addStreamButton();
@@ -34,4 +35,17 @@ public class Streamstepdef {
     public void userClicksOnStreamtypeDropdownOption(String stype) {
         stream.streamType(stype);
     }
+    @Then("user clicks on stream link type option {string}")
+    public void userClicksOnStreamLinkTypeOption(String ltype) {
+        stream.LinkType(ltype);
+    }
+    @Then("user clicks on Downlodable link")
+    public void userClicksOnDownlodableLink() {
+        stream.downladLink();
+    }
+    @Then("user clicks on create button")
+    public void userClicksOnCreateButton() {
+        stream.buttonSubmit();
+    }
+
 }
