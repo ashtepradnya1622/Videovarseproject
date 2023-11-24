@@ -18,6 +18,9 @@ public class Addevent extends Genericutil {
      * Constructor for the Addevent
      */
     public Addevent() {
+        /**
+         *Call the constructor of the superclass &Initialize the elements on the page using PageFactory and the WebDriver.
+         */
         super();
         PageFactory.initElements(driver(), this);
     }
@@ -80,7 +83,6 @@ public class Addevent extends Genericutil {
         Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
     }
     /**Initiates the event organizer field by clicking using JavaScript
-     * and then enters the provided organizer name.
      * @param Oname The name of the event organizer to be entered.
      */
     public void eventOrgnizer(String Oname) {
@@ -120,7 +122,6 @@ public class Addevent extends Genericutil {
     }
     /**
      * Sets the event start date by clicking on the event start date element
-     * and selecting the specified date using JavaScript.
      * @param sDate The day of the month for the event start date.
      */
     public void eventStartDate(Integer sDate) {
@@ -129,8 +130,7 @@ public class Addevent extends Genericutil {
         selectDate(sDate);
     }
     /**
-     * @param date The day of the month to be selected.
-     * The method constructs an XPath for the date, waits for the element to be visible,
+     * @param date The day of the month to be selected
      * and performs a JavaScript click on the element.
      */
     public void selectDate(int date){
@@ -140,7 +140,6 @@ public class Addevent extends Genericutil {
     }
     /**
      * Sets the event end date by clicking on the event end date element
-     * and selecting the specified date using JavaScript.
      * @param eDate The day of the month for the event end date.
      */
     public void eventEndDate(Integer eDate)
@@ -149,6 +148,9 @@ public class Addevent extends Genericutil {
         nextMonth();
         selectDate(eDate);
     }
+    /**
+     *clickon create button
+     */
     public void clickCreateBtn(){
         Genericutil.sleep(2000);
         scrollTO(Submit);

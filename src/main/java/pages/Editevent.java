@@ -43,7 +43,7 @@ public class Editevent extends Genericutil {
      * Perform a search operation by clicking on the search element.
      */
     public void searchBox(String ename) {
-        Clickonjs(search);
+        actionjsclick(search);
         sendValueToTextfield(search, ename);
         search.sendKeys(Keys.ENTER);
     }

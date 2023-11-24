@@ -47,12 +47,6 @@ public class Stream extends Genericutil {
        waitAndClick(streamdropdown);
        streamdropdown1(stype);
     }
-    public void streamThumbnail1(){
-        JSClick(streamthumbnail1);
-    }
-    public void uploadThamb1() {
-        Upload.file("C:\\Users\\Coditas\\Downloads\\Thumb.jpg");
-    }
     @FindBy(xpath = "//div[@title='Live']")
     private WebElement liveOption;
     @FindBy(xpath = "//div[@title='Archived']")

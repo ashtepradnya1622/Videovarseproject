@@ -19,7 +19,6 @@ public class LoginStepDef {
     public void enterTheValidDetails() {
         login.Validlogin();
     }
-
     @Then("Click on login button")
     public void clickOnLoginButton() {
 

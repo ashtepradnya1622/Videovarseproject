@@ -7,15 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
-import static com.google.common.collect.Iterables.isEmpty;
 public class Genericutil {
     public WebDriverWait wait;
     JavascriptExecutor jsExecutor;
@@ -29,7 +23,7 @@ public class Genericutil {
     /**
      * Javascript executor click on element with mouse action
      */
-    public void Clickonjs(WebElement element) {
+    public void actionjsclick(WebElement element) {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(element));
             Actions action = new Actions(driver());
@@ -56,7 +50,6 @@ public class Genericutil {
             throw e;
         }
     }
-
     /**
      *Use WebDriverWait to wait for the visibility of the element
      */
@@ -124,37 +117,20 @@ public class Genericutil {
             throw e;
         }
     }
+//    public void click(WebElement element)
+//    {
+//        try{
+//            element.click();
+//            System.out.println("Successfully clicked on "+element);
+//        }
+//        catch (Exception e)
+//        {
+//            System.out.println("Unable to clicked on element <"+element.toString()+">");
+//            System.out.println("Throws Exception :" +e);
+//            throw e;
+//        }
+//    }
 
-    public void click(WebElement element)
-    {
-        try{
-            element.click();
-            System.out.println("Successfully clicked on "+element);
-        }
-        catch (Exception e)
-        {
-            System.out.println("Unable to clicked on element <"+element.toString()+">");
-            System.out.println("Throws Exception :" +e);
-            throw e;
-        }
-    }
-    public void clickOnElementFromList(List<WebElement> elements, String str){
-        try{
-            for(WebElement e: elements){
-                waitForElement(e);
-                if(e.getText().toLowerCase().contains(str.toLowerCase())){
-                    System.out.println("String :"+str);
-                    jsExecutor.executeScript("arguments[0].click();", e);
-                    System.out.println("Clicked on "+ elements.toString());
-                    break;
-                }
-            }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-
-    }
     /**
      * To avoid synchonization uses the synchonization method (sleep)
      */

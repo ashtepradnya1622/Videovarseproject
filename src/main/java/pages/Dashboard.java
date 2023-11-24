@@ -18,6 +18,9 @@ public class Dashboard extends Genericutil{
     WebElement totaluser;
     @FindBy(xpath = "//p[text()='Pending Invitations']")
     WebElement PendingInvitations;
+    /**
+     * verification of text
+     */
     public void dataverify(){
             verifyText(totalstream, "Total Streams");
             verifyText(livestream ,"Live Streams");

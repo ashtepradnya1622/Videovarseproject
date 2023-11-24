@@ -25,21 +25,33 @@ public class Editstream extends Genericutil {
     WebElement streamTitle ;
     @FindBy(xpath = "//p[@class='_gridEllipsis_1afhi_95']")
     WebElement selectStream ;
+    /**
+     * Click on the stream search and enter the value
+     */
     public void streamSearch(String ssearch){
        waitAndClick(streamSearch);
        Genericutil.sleep(2000);
         sendValueToTextfield(streamSearch,"streamfour");
         streamSearch.sendKeys(Keys.ENTER);
     }
+    /**
+     * Click on the streamname
+     */
     public void selectstreamName(){
         waitAndClick(selectStream);
     }
     public void threeDots(){
         threedots.click();
     }
+    /**
+     * Click on the editstreambutton
+     */
     public void editStreambutton(){
         editstreambutton.click();
     }
+    /**
+     * Click on the stream title  and enter the value
+     */
     public void streamTitle(String stname) {
         waitAndClick(streamTitle);
         streamTitle.clear();

@@ -33,7 +33,6 @@ public class DriverFactory {
         }
         return driverThreadLocal.get();
     }
-
     public static void driverTearDown() {
     }
 }

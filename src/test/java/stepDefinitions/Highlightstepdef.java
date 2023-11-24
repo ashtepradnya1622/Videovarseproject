@@ -9,8 +9,8 @@ import org.openqa.selenium.interactions.Actions;
 import pages.Addevent;
 import pages.Highlight;
 import pages.Login;
+
 public class Highlightstepdef {
-    WebDriver driver;
     Login login;
     Highlight highlight;
     public Highlightstepdef(Login login, Highlight highlight) {
@@ -39,11 +39,10 @@ public class Highlightstepdef {
     public void userClicksOnDescriptionAndEnterTheDescriptionDetails(String hdesc) {
         highlight.hdescription(hdesc);
     }
-//    @Then("user clicks on clips and perform drag drop")
-//    public void userClicksOnClipsAndPerformDragDrop() {
-//        highlight.dragAndDrop();
-//    }
-
+    @Then("user clicks on clips and perform drag drop")
+    public void userClicksOnClipsAndPerformDragDrop() {
+        highlight.dragAndDrop();
+    }
     @Then("user clicks on save as draft button")
     public void userClicksOnSaveAsDraftButton() {
         highlight.saveDraft();
@@ -56,14 +55,14 @@ public class Highlightstepdef {
     public void userClicksOnFrame() {
         highlight.frame();
     }
-    @Then("user clicks on clips and perform drag drop")
-    public void userClicksOnClipsAndPerformDragDrop() {
-        WebElement dragdrop1 = driver.findElement(By.xpath("dragdrop1"));
-        WebElement dragdrop2 = driver.findElement(By.xpath("dragdrop2"));
-        dragdrop1.click();
-        Actions actions = new Actions(driver);
-        actions.dragAndDrop(dragdrop1, dragdrop2).build().perform();
+    @Then("user clicks on next icon")
+    public void userClicksOnNextIcon() {
+        highlight.nextIcon();
     }
+    @Then("user clicks on frame type")
+    public void userClicksOnFrameType() {
+        highlight.frameType();
     }
+}
 
 

@@ -51,7 +51,7 @@ public class Login extends Genericutil {
         openUrl();
         sendValueToTextfield(username, Env.config.username());
         sendValueToTextfield(pass, Env.config.passowrd());
-        Clickonjs(logInBtn);
+        actionjsclick(logInBtn);
         waitForElement(dashboard);
         //System.out.println(driver().getCurrentUrl());
         //Assert.assertTrue(driver().getCurrentUrl().contains("dashboard"));
@@ -64,7 +64,7 @@ public class Login extends Genericutil {
         openUrl();
         sendValueToTextfield(username, userId);
         sendValueToTextfield(pass, password);
-        Clickonjs(logInBtn);
+        actionjsclick(logInBtn);
         verifyText(errorMsg2,"Invalid credentials.");
     }
     /**
@@ -91,7 +91,6 @@ public class Login extends Genericutil {
      *Clicks on the reset password link using JavaScript.
      */
     public void clickonresetlink() {
-
         JSClick(resetpassword);
     }
 }
